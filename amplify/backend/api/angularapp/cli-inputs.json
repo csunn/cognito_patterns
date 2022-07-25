@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "angularapp",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/sunchloe/angular_app/amplify/backend/api/angularapp/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}

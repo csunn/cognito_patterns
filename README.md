@@ -1,6 +1,6 @@
-# AngularApp
+# Creating an Angular App with Amplify Hosted Authentication UI using TypeScript
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+This app uses the new version of Amplify Authenticator to provide a basic user authentication flow.
 
 ## Development server
 
