@@ -11,23 +11,48 @@ import Home from "Home"; //*importing our homepage attributes from Home.tsx
 Amplify.configure(awsExports); // setting up the various AWS resources that we want to work with
 
 
-// storing function using const instead of function()
-// makes function immutable & allows for fat arrow syntax
+const formFields = {
+   signUp: {
+    username: {
+      order: 1,
+      placeholder: "Username"
+    },
+     email: {
+       order:1
+     },
+     first_name: {
+       order: 2,
+       placeholder: 'First Name'
+     },
+     last_name: {
+      order: 3,
+      placeholder: 'Last Name'
+     },
+     password: {
+       order: 4
+     },
+     confirm_password: {
+       order: 5
+     },
+   },
+  }
+
 const App = () => {
   return (
-    <Authenticator // calling authenticator from amplify
-      initialState="signIn" // setting intial state of webpage
+    <Authenticator 
+      initialState="signIn" 
       components={{
         SignUp: {
           FormFields() {
             const { validationErrors } = useAuthenticator();
 
             return (
+              
               <>
-                {/* use the default `Authenticator.SignUp.FormFields` */}
-                <Authenticator.SignUp.FormFields />
 
-                {/* adds terms and conditions and requires in order to sign up */}
+                <Authenticator.SignUp.FormFields/>
+
+
                 <CheckboxField
                   errorMessage={validationErrors.acknowledgement as string}
                   hasError={!!validationErrors.acknowledgement}
@@ -40,10 +65,9 @@ const App = () => {
           },
         },
       }}
-
+      formFields={formFields}
       
-      // requires user to accept terms and conditions to create account
-      // 
+
       services={{ 
         async validateCustomSignUp(formData) {
           if (!formData.acknowledgement) {
@@ -55,12 +79,11 @@ const App = () => {
       }}
     >
 
-    {/* creates home page */}
+
       {({ signOut, user }) => (
           <Home myUser={user} userSignout={signOut} />
       )}
     </Authenticator>
   );
 }
-
 export default App;
