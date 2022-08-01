@@ -10,7 +10,7 @@ const Home = (props: HomeProps) => {
     return (
         
         <main>
-          <h1>Hello {myUser?.username || "User"}</h1>
+          <h1>Hello, {myUser?.username || "User"}</h1>
           <button onClick={userSignout}>Sign out</button>
         </main>
     )
