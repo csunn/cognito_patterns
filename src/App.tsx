@@ -176,7 +176,7 @@ const formFields = {
   signIn: {
     username: {
       labelHidden: false,
-      placeholder: "Username",
+      placeholder: "username",
       isRequired: true,
       label: "Username:",
     },
