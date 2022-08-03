@@ -1,20 +1,18 @@
-import React from 'react';
-import { CognitoUserAmplify } from '@aws-amplify/ui';
+import React from "react";
+import { CognitoUserAmplify } from "@aws-amplify/ui";
 type HomeProps = {
-    myUser: CognitoUserAmplify,
-    userSignout?: ()=> void
-}
+  // myUser: CognitoUserAmplify,
+  userSignout?: () => void;
+};
 const Home = (props: HomeProps) => {
-    const { myUser, userSignout } = props;
+  const { userSignout } = props;
 
-    return (
-        
-        <main>
-          <h1>Hello {myUser?.username || "User"}</h1>
-          <button onClick={userSignout}>Sign out</button>
-        </main>
-    )
-
-}
+  return (
+    <main>
+      <h1>Hello!</h1>
+      <button onClick={userSignout}>Sign out</button>
+    </main>
+  );
+};
 
 export default Home;
