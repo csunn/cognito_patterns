@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Auth } from "aws-amplify";
 import { TextField, Button, Heading } from "@aws-amplify/ui-react";
-import { Navigate } from "react-router-dom";
 
 const ConfirmSignUp = () => {
   const [username, setUsername] = useState("");
@@ -21,7 +20,9 @@ const ConfirmSignUp = () => {
   };
   return (
     <form>
-      <Heading>Confirm Sign-Up</Heading>
+      <Heading level={1} fontWeight="bold">
+        Confirm Sign-Up
+      </Heading>
 
       <TextField
         name="username"
