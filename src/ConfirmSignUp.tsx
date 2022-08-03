@@ -7,10 +7,10 @@ const ConfirmSignUp = () => {
   const [username, setUsername] = useState("");
   const [authCode, setAuthCode] = useState("");
 
-  async function confirmSignUp() {
+  const confirmSignUp = async () => {
     try {
-      await Auth.confirmSignUp(username, authCode);
-      console.log("Code confirmed");
+      const response = await Auth.confirmSignUp(username, authCode);
+      console.log(response);
       // ("/Home");
     } catch (error) {
       console.log(
@@ -18,7 +18,7 @@ const ConfirmSignUp = () => {
         error.code
       );
     }
-  }
+  };
   return (
     <form>
       <Heading>Confirm Sign-Up</Heading>
