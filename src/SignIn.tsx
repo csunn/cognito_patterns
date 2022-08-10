@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Auth } from "aws-amplify";
 import { TextField, Button, Heading } from "@aws-amplify/ui-react";
+import ForgotPassword from "ForgotPassword";
 
 const SignIn = () => {
   const [username, setUsername] = useState("");

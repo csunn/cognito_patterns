@@ -74,12 +74,7 @@ const Register = () => {
         label="Email"
         onChange={(event) => setEmail(event.target.value)}
       />
-      <PhoneNumberField
-        name="phone_number"
-        defaultCountryCode="+1"
-        label="Phone Number"
-        placeholder="XXX-XXX-XXXX"
-      />
+
       <TextField
         name="password"
         type="password"

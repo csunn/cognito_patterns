@@ -5,6 +5,8 @@ import Register from "Register";
 import awsExports from "aws-exports";
 import ConfirmSignUp from "ConfirmSignUp";
 import SignIn from "SignIn";
+import ForgotPassword from "ForgotPassword";
+import ResetPassword from "ResetPassword";
 Amplify.configure(awsExports);
 
 const App = () => {
@@ -13,6 +15,8 @@ const App = () => {
       <Register />
       <ConfirmSignUp />
       <SignIn />
+      <ForgotPassword />
+      <ResetPassword />
     </Fragment>
   );
 };
