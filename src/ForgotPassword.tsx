@@ -4,8 +4,6 @@ import { TextField, Button, Heading } from "@aws-amplify/ui-react";
 
 const ForgotPassword = () => {
   const [username, setUsername] = useState("");
-  const [authCode, setAuthCode] = useState("");
-  const [new_password, setNewPassword] = useState("");
 
   const handleForgotPassword = async () => {
     try {
@@ -28,18 +26,7 @@ const ForgotPassword = () => {
         placeholder="Enter username"
         onChange={(event) => setUsername(event.target.value)}
       />
-      {/* <TextField
-        name="authcode"
-        label="Code"
-        placeholder="Enter verification code"
-        onChange={(event) => setAuthCode(event.target.value)}
-      />
-      <TextField
-        name="new_password"
-        label="New Password"
-        placeholder="New Password"
-        onChange={(event) => setNewPassword(event.target.value)}
-      /> */}
+
       <Button loadingText="" onClick={handleForgotPassword} ariaLabel="">
         Forgot Password
       </Button>
